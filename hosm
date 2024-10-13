@@ -1,0 +1,67 @@
+import java.util.ArrayList;  
+import java.util.Scanner;  
+
+// 类：病患  
+class Patient {  
+    private String id;  
+    private String name;  
+    private String disease;  
+
+    // 构造函数  
+    public Patient(String id, String name, String disease) {  
+        this.id = id;  
+        this.name = name;  
+        this.disease = disease;  
+    }  
+
+    // Getter 和 Setter  
+    public String getId() {  
+        return id;  
+    }  
+
+    public String getName() {  
+        return name;  
+    }  
+
+    public String getDisease() {  
+        return disease;  
+    }  
+
+    @Override  
+    public String toString() {  
+        return "ID: " + id + ", 姓名: " + name + ", 疾病: " + disease;  
+    }  
+}  
+
+// 类：医院管理系统  
+public class HospitalManagementSystem {  
+    private static ArrayList<Patient> patientList = new ArrayList<>();  
+    private static Scanner scanner = new Scanner(System.in);  
+
+    public static void main(String[] args) {  
+        while (true) {  
+            System.out.println("\n请选择操作：\n1. 添加病患\n2. 移除病患\n3. 查询病患\n4. 所有病患\n5. 退出");  
+            int option = scanner.nextInt();  
+            scanner.nextLine(); // 捕获换行符  
+            
+            switch (option) {  
+                case 1:  
+                    addPatient();  
+                    break;  
+                case 2:  
+                    removePatient();  
+                    break;  
+                case 3:  
+                    searchPatient();  
+                    break;  
+                case 4:  
+                    displayAllPatients();  
+                    break;  
+                case 5:  
+                    System.out.println("退出系统。");  
+                    return;  
+                default:  
+                    System.out.println("无效的选项，请重新选择。");  
+            }  
+        }  
+    } 
