@@ -77,3 +77,15 @@ private static void addPatient() {
         patientList.add(patient);  
         System.out.println("病患添加成功！");  
     }  
+ private static void removePatient() {  
+        System.out.print("输入病患ID以移除病患：");  
+        String id = scanner.nextLine();  
+        for (Patient patient : patientList) {  
+            if (patient.getId().equals(id)) {  
+                patientList.remove(patient);  
+                System.out.println("病患已移除。");  
+                return;  
+            }  
+        }  
+        System.out.println("未找到对应ID的病患。");  
+    }
