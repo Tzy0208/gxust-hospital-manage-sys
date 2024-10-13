@@ -77,7 +77,7 @@ private static void addPatient() {
         patientList.add(patient);  
         System.out.println("病患添加成功！");  
     }  
- private static void removePatient() {  
+
         System.out.print("输入病患ID以移除病患：");  
         String id = scanner.nextLine();  
         for (Patient patient : patientList) {  
@@ -88,27 +88,3 @@ private static void addPatient() {
             }  
         }  
         System.out.println("未找到对应ID的病患。");  
-    }
-     private static void searchPatient() {  
-        System.out.print("输入病患ID进行查询：");  
-        String id = scanner.nextLine();  
-        for (Patient patient : patientList) {  
-            if (patient.getId().equals(id)) {  
-                System.out.println("找到病患信息: " + patient);  
-                return;  
-            }  
-        }  
-        System.out.println("未找到对应ID的病患。");  
-    }  
-
-    private static void displayAllPatients() {  
-        if (patientList.isEmpty()) {  
-            System.out.println("没有病患信息。");  
-            return;  
-        }  
-        System.out.println("所有病患信息：");  
-        for (Patient patient : patientList) {  
-            System.out.println(patient);  
-        }  
-    }  
-}
