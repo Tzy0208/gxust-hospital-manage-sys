@@ -65,3 +65,15 @@ public class HospitalManagementSystem {
             }  
         }  
     }  
+private static void addPatient() {  
+        System.out.print("输入病患ID：");  
+        String id = scanner.nextLine();  
+        System.out.print("输入病患姓名：");  
+        String name = scanner.nextLine();  
+        System.out.print("输入病患疾病：");  
+        String disease = scanner.nextLine();  
+
+        Patient patient = new Patient(id, name, disease);  
+        patientList.add(patient);  
+        System.out.println("病患添加成功！");  
+    }  
