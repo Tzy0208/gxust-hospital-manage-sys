@@ -64,27 +64,3 @@ public class HospitalManagementSystem {
                     System.out.println("无效的选项，请重新选择。");  
             }  
         }  
-    }  
-private static void addPatient() {  
-        System.out.print("输入病患ID：");  
-        String id = scanner.nextLine();  
-        System.out.print("输入病患姓名：");  
-        String name = scanner.nextLine();  
-        System.out.print("输入病患疾病：");  
-        String disease = scanner.nextLine();  
-
-        Patient patient = new Patient(id, name, disease);  
-        patientList.add(patient);  
-        System.out.println("病患添加成功！");  
-    }  
-
-        System.out.print("输入病患ID以移除病患：");  
-        String id = scanner.nextLine();  
-        for (Patient patient : patientList) {  
-            if (patient.getId().equals(id)) {  
-                patientList.remove(patient);  
-                System.out.println("病患已移除。");  
-                return;  
-            }  
-        }  
-        System.out.println("未找到对应ID的病患。");  
